@@ -1,6 +1,7 @@
 package com.github.pjfanning.safenumberparser;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 
 public class SafeBigDecimal {
     private final BigDecimal bigDecimal;
@@ -17,6 +18,10 @@ public class SafeBigDecimal {
                     "Failed to parse SafeBigDecimal because the scale is too large; max allowed scale is " +
                             SafeNumberParserConfig.getBigDecimalMaxScale());
         }
+    }
+
+    public SafeBigDecimal(BigDecimal bigDecimal) {
+        this.bigDecimal = bigDecimal;
     }
 
     public BigDecimal toBigDecimal() {

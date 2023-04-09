@@ -25,6 +25,10 @@ public class SafeBigInteger {
         }
     }
 
+    public SafeBigInteger(BigInteger bigInteger) {
+        this.bigInteger = bigInteger;
+    }
+
     public BigInteger toBigInteger() {
         return bigInteger;
     }
