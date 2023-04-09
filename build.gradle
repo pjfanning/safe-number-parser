@@ -1,9 +1,14 @@
 plugins {
-    id("java")
+    id 'java'
+    id 'signing'
+    id 'maven-publish'
+    id 'io.github.gradle-nexus.publish-plugin' version '1.2.0'
 }
 
 group = "com.github.pjfanning"
 version = "0.1.0-SNAPSHOT"
+
+sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
@@ -17,4 +22,58 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.named('jar') {
+    manifest {
+        attributes('Automatic-Module-Name': 'com.github.pjfanning.safenumberparser')
+    }
+}
+
+java {
+    withJavadocJar()
+    withSourcesJar()
+}
+
+nexusPublishing {
+    repositories {
+        sonatype()
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from(components.java)
+            pom {
+                name = 'safe-number-parser'
+                description = 'Java number parsing that applies configurable limits in order to avoid excessive resource use'
+                url = 'https://github.com/pjfanning/safe-number-parser'
+                licenses {
+                    license {
+                        name = 'The Apache License, Version 2.0'
+                        url = 'https://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+                developers {
+                    developer {
+                        id = 'pjfanning'
+                        name = 'PJ Fanning'
+                    }
+                }
+                scm {
+                    url = 'https://github.com/pjfanning/safe-number-parser'
+                    connection = 'scm:git://github.com/pjfanning/safe-number-parser.git'
+                    developerConnection = 'scm:git://github.com/pjfanning/safe-number-parser.git'
+                }
+            }
+        }
+    }
+}
+
+signing {
+    def signingKey = findProperty("signingKey")
+    def signingPassword = findProperty("signingPassword")
+    useInMemoryPgpKeys(signingKey, signingPassword)
+    sign publishing.publications.mavenJava
 }
