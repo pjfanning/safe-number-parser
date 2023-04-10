@@ -6,31 +6,31 @@ import com.typesafe.config.ConfigFactory;
 public final class SafeNumberParserConfig {
     private final static Config config = ConfigFactory.load();
 
-    static int getBigDecimalMaxLength() {
+    public static int getBigDecimalMaxLength() {
         return config.getInt("safe-number-parser.big-decimal.max-length");
     }
 
-    static int getBigDecimalMaxScale() {
+    public static int getBigDecimalMaxScale() {
         return config.getInt("safe-number-parser.big-decimal.max-scale");
     }
 
-    static boolean allowBigIntegerENotation() {
+    public static boolean allowBigIntegerENotation() {
         return config.getBoolean("safe-number-parser.big-integer.support-e-notation");
     }
 
-    static int getBigIntegerMaxLength() {
+    public static int getBigIntegerMaxLength() {
         return config.getInt("safe-number-parser.big-integer.max-length");
     }
 
-    static int getBigIntegerMaxScale() {
+    public static int getBigIntegerMaxScale() {
         return config.getInt("safe-number-parser.big-integer.max-scale");
     }
 
-    static int getDoubleMaxLength() {
+    public static int getDoubleMaxLength() {
         return config.getInt("safe-number-parser.double.max-length");
     }
 
-    static int getFloatMaxLength() {
+    public static int getFloatMaxLength() {
         return config.getInt("safe-number-parser.float.max-length");
     }
 }
