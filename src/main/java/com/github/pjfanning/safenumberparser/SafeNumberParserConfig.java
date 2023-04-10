@@ -3,7 +3,7 @@ package com.github.pjfanning.safenumberparser;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
-final class SafeNumberParserConfig {
+public final class SafeNumberParserConfig {
     private final static Config config = ConfigFactory.load();
 
     static int getBigDecimalMaxLength() {
