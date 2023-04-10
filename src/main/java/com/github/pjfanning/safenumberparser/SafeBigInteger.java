@@ -6,7 +6,7 @@ import java.math.BigInteger;
 public class SafeBigInteger {
     private final BigInteger bigInteger;
 
-    public SafeBigInteger(String input) throws ConstraintException {
+    public SafeBigInteger(final String input) throws ConstraintException {
         if (input.length() > SafeNumberParserConfig.getBigIntegerMaxLength()) {
             throw new ConstraintException(
                     "Failed to parse SafeBigInteger because the input is too long; max allowed chars is " +
@@ -25,7 +25,7 @@ public class SafeBigInteger {
         }
     }
 
-    public SafeBigInteger(BigInteger bigInteger) {
+    public SafeBigInteger(final BigInteger bigInteger) {
         this.bigInteger = bigInteger;
     }
 

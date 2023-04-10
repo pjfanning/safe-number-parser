@@ -25,4 +25,12 @@ final class SafeNumberParserConfig {
     static int getBigIntegerMaxScale() {
         return config.getInt("safe-number-parser.big-integer.max-scale");
     }
+
+    static int getDoubleMaxLength() {
+        return config.getInt("safe-number-parser.double.max-length");
+    }
+
+    static int getFloatMaxLength() {
+        return config.getInt("safe-number-parser.float.max-length");
+    }
 }
