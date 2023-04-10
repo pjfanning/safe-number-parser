@@ -1,9 +1,8 @@
 package com.github.pjfanning.safenumberparser;
 
 import java.math.BigDecimal;
-import java.math.BigInteger;
 
-public class SafeBigDecimal {
+public class SafeBigDecimal implements SafeNumber {
     private final BigDecimal bigDecimal;
 
     public SafeBigDecimal(String input) throws ConstraintException {
