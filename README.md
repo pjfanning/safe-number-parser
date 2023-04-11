@@ -8,3 +8,11 @@ There are also scenarios where numbers with only a few chars can cause serious p
 
 This lib uses [com.typesafe:config](https://github.com/lightbend/config) lib to implement the configuration.
 The default configs are implemented in [reference.conf](https://github.com/pjfanning/safe-number-parser/blob/main/src/main/resources/reference.conf).
+
+## Jackson
+
+[jackson-datatype-safe-number](https://github.com/pjfanning/jackson-datatype-safe-number) provides custom serialization/deserialization
+for the types in this lib.
+
+It should be relatively easy to do something similar for your preferred JSON library (or for other libs supporting
+structured data formats).
