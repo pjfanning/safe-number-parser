@@ -24,8 +24,12 @@ public final class SafeNumberParserConfig {
         return config.getInt("safe-number-parser.big-decimal.max-scale");
     }
 
-    public static boolean allowBigIntegerENotation() {
+    public static boolean isBigIntegerENotationSupported() {
         return config.getBoolean("safe-number-parser.big-integer.support-e-notation");
+    }
+
+    public static boolean isBigIntegerExactConversionRequired() {
+        return config.getBoolean("safe-number-parser.big-integer.enforce-exact");
     }
 
     public static int getBigIntegerMaxLength() {

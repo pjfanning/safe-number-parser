@@ -1,7 +1,7 @@
 package com.github.pjfanning.safenumberparser;
 
 public class ConstraintException extends Exception {
-    ConstraintException(String message) {
+    public ConstraintException(String message) {
         super(message);
     }
 }

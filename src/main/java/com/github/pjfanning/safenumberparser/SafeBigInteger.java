@@ -12,14 +12,15 @@ public class SafeBigInteger {
                     "Failed to parse SafeBigInteger because the input is too long; max allowed chars is " +
                             SafeNumberParserConfig.getBigIntegerMaxLength());
         }
-        if (SafeNumberParserConfig.allowBigIntegerENotation()) {
+        if (SafeNumberParserConfig.isBigIntegerENotationSupported()) {
             final BigDecimal bigDecimal = new BigDecimal(input);
             if (Math.abs(bigDecimal.scale()) > SafeNumberParserConfig.getBigIntegerMaxScale()) {
                 throw new ConstraintException(
                         "Failed to parse SafeBigInteger because the scale is too big; max allowed scale is " +
                                 SafeNumberParserConfig.getBigIntegerMaxScale());
             }
-            bigInteger = bigDecimal.toBigInteger();
+            bigInteger = SafeNumberParserConfig.isBigIntegerExactConversionRequired() ?
+                    bigDecimal.toBigIntegerExact() : bigDecimal.toBigInteger();
         } else {
             bigInteger = new BigInteger(input);
         }
