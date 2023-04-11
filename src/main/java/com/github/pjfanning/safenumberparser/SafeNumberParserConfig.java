@@ -4,7 +4,17 @@ import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
 public final class SafeNumberParserConfig {
-    private final static Config config = ConfigFactory.load();
+    private static final Config defaultConfig = ConfigFactory.load();
+    private static Config config = defaultConfig;
+
+    // open for testing
+    static void setConfig(final Config configOverride) {
+        if (configOverride == null) {
+            config = defaultConfig;
+        } else {
+            config = configOverride.withFallback(defaultConfig);
+        }
+    }
 
     public static int getBigDecimalMaxLength() {
         return config.getInt("safe-number-parser.big-decimal.max-length");
