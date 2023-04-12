@@ -2,7 +2,7 @@ package com.github.pjfanning.safenumberparser;
 
 import java.math.BigDecimal;
 
-public class SafeBigDecimal implements SafeNumber {
+public class SafeBigDecimal extends SafeNumber {
     private final BigDecimal bigDecimal;
 
     public SafeBigDecimal(final String input) throws ConstraintException {
@@ -38,5 +38,25 @@ public class SafeBigDecimal implements SafeNumber {
     @Override
     public String toString() {
         return bigDecimal.toString();
+    }
+
+    @Override
+    public int intValue() {
+        return bigDecimal.intValue();
+    }
+
+    @Override
+    public long longValue() {
+        return bigDecimal.longValue();
+    }
+
+    @Override
+    public float floatValue() {
+        return bigDecimal.floatValue();
+    }
+
+    @Override
+    public double doubleValue() {
+        return bigDecimal.doubleValue();
     }
 }

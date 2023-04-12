@@ -1,3 +1,3 @@
 package com.github.pjfanning.safenumberparser;
 
-public interface SafeNumber {}
+public abstract class SafeNumber extends Number {}

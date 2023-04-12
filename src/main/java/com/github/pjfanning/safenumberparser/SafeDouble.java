@@ -1,6 +1,6 @@
 package com.github.pjfanning.safenumberparser;
 
-public class SafeDouble {
+public class SafeDouble extends SafeNumber {
     private final Double d;
 
     public SafeDouble(final String input) throws ConstraintException {
@@ -23,5 +23,25 @@ public class SafeDouble {
     @Override
     public String toString() {
         return d.toString();
+    }
+
+    @Override
+    public int intValue() {
+        return d.intValue();
+    }
+
+    @Override
+    public long longValue() {
+        return d.longValue();
+    }
+
+    @Override
+    public float floatValue() {
+        return d.floatValue();
+    }
+
+    @Override
+    public double doubleValue() {
+        return d.doubleValue();
     }
 }
