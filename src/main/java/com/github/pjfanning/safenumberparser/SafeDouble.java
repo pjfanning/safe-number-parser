@@ -1,5 +1,7 @@
 package com.github.pjfanning.safenumberparser;
 
+import java.util.Objects;
+
 public class SafeDouble extends SafeNumber {
     private final Double d;
 
@@ -43,5 +45,18 @@ public class SafeDouble extends SafeNumber {
     @Override
     public double doubleValue() {
         return d.doubleValue();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SafeDouble that = (SafeDouble) o;
+        return Objects.equals(d, that.d);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(d);
     }
 }

@@ -1,6 +1,7 @@
 package com.github.pjfanning.safenumberparser;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class SafeBigDecimal extends SafeNumber {
     private final BigDecimal bigDecimal;
@@ -58,5 +59,18 @@ public class SafeBigDecimal extends SafeNumber {
     @Override
     public double doubleValue() {
         return bigDecimal.doubleValue();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SafeBigDecimal that = (SafeBigDecimal) o;
+        return Objects.equals(bigDecimal, that.bigDecimal);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bigDecimal);
     }
 }

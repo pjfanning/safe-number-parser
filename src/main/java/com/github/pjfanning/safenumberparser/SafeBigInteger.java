@@ -2,6 +2,7 @@ package com.github.pjfanning.safenumberparser;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.Objects;
 
 public class SafeBigInteger extends SafeNumber {
     private final BigInteger bigInteger;
@@ -57,5 +58,18 @@ public class SafeBigInteger extends SafeNumber {
     @Override
     public double doubleValue() {
         return bigInteger.doubleValue();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        SafeBigInteger that = (SafeBigInteger) o;
+        return Objects.equals(bigInteger, that.bigInteger);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(bigInteger);
     }
 }
