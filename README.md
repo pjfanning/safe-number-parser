@@ -13,6 +13,10 @@ There are also scenarios where numbers with only a few chars can cause serious p
 This lib uses [com.typesafe:config](https://github.com/lightbend/config) lib to implement the configuration.
 The default configs are implemented in [reference.conf](https://github.com/pjfanning/safe-number-parser/blob/main/src/main/resources/reference.conf).
 
+To override the default configs, you just need to include a file called `application.conf` in your resource directory.
+If you are unfamiliar with [com.typesafe:config](https://github.com/lightbend/config), its docs are pretty good and
+I think it will find that it works in a pretty intuitive way.
+
 ## Implementation
 
 The classes are:
