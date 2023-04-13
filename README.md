@@ -38,6 +38,8 @@ These classes should work with legacy versions of Jackson. THey may not be as us
 because newer versions of Jackson have some of their own support for validating number sizes
 (see [StreamReadConstraints](https://javadoc.io/static/com.fasterxml.jackson.core/jackson-core/2.15.0-rc2/com/fasterxml/jackson/core/StreamReadConstraints.html)).
 
+Here is an [example](https://github.com/pjfanning/jackson-datatype-safe-number/blob/main/src/test/java/com/github/pjfanning/jackson/safenumber/TestPlainMapper.java) of using SafeBigDecimal with jackson-databind.
+
 I may continue work on [jackson-datatype-safe-number](https://github.com/pjfanning/jackson-datatype-safe-number).
 This provides custom serialization/deserialization for the types in this lib, that also takes advantage on jackson-core's
 fast number parser support.
