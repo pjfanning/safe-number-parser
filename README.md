@@ -1,4 +1,4 @@
-[![Build (github)](https://github.com/pjfanning/safe-number-parser/actions/workflows/main.yml/badge.svg)](https://github.com/pjfanning/safe-number-parser/actions/workflows/main.yml)
+[![Build (github)](https://github.com/pjfanning/safe-number-parser/actions/workflows/ci.yml/badge.svg)](https://github.com/pjfanning/safe-number-parser/actions/workflows/ci.yml)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.pjfanning/safe-number-parser/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.pjfanning/safe-number-parser)
 [![Javadoc](https://javadoc.io/badge/com.github.pjfanning/safe-number-parser.svg)](https://javadoc.io/doc/com.github.pjfanning/safe-number-parser) |
 
