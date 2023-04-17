@@ -3,6 +3,14 @@ package com.github.pjfanning.safenumberparser;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
+/**
+ * Used to evaluate the configuration used by this library. See
+ * <a href="https://github.com/lightbend/config">typesafe/config</>
+ * for documentation on how to override these configs.
+ *
+ * The default config is set in
+ * <a href="https://github.com/pjfanning/safe-number-parser/blob/main/src/main/resources/reference.conf">reference.conf</a>.
+ */
 public final class SafeNumberParserConfig {
     private static final Config defaultConfig = ConfigFactory.load();
     private static Config config = defaultConfig;

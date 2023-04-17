@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.util.Objects;
 
+/**
+ * A drop-in replacement for {@link BigInteger} but with constraints applied when parsing.
+ */
 public class SafeBigInteger extends SafeNumber {
     private final BigInteger bigInteger;
 

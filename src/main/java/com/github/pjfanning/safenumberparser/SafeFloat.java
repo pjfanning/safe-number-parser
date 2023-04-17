@@ -2,6 +2,9 @@ package com.github.pjfanning.safenumberparser;
 
 import java.util.Objects;
 
+/**
+ * A drop-in replacement for {@link Float} but with constraints applied when parsing.
+ */
 public class SafeFloat extends SafeNumber {
     private final Float f;
 

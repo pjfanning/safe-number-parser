@@ -3,6 +3,9 @@ package com.github.pjfanning.safenumberparser;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+/**
+ * A drop-in replacement for {@link BigDecimal} but with constraints applied when parsing.
+ */
 public class SafeBigDecimal extends SafeNumber {
     private final BigDecimal bigDecimal;
 

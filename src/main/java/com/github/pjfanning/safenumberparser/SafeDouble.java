@@ -2,6 +2,9 @@ package com.github.pjfanning.safenumberparser;
 
 import java.util.Objects;
 
+/**
+ * A drop-in replacement for {@link Double} but with constraints applied when parsing.
+ */
 public class SafeDouble extends SafeNumber {
     private final Double d;
 
