@@ -4,10 +4,7 @@ import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 
 /**
- * Used to evaluate the configuration used by this library. See
- * <a href="https://github.com/lightbend/config">typesafe/config</>
- * for documentation on how to override these configs.
- *
+ * Used to evaluate the configuration used by this library.
  * The default config is set in
  * <a href="https://github.com/pjfanning/safe-number-parser/blob/main/src/main/resources/reference.conf">reference.conf</a>.
  */

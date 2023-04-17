@@ -16,6 +16,7 @@ The default configs are implemented in [reference.conf](https://github.com/pjfan
 To override the default configs, you just need to include a file called `application.conf` in your resource directory.
 If you are unfamiliar with [com.typesafe:config](https://github.com/lightbend/config), its docs are pretty good and
 I think it will find that it works in a pretty intuitive way.
+This [article](https://mincong.io/2019/12/08/typesafe-config/) is another good summary.
 
 ## Implementation
 
