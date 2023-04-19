@@ -10,6 +10,12 @@ import java.util.Objects;
 public class SafeBigInteger extends SafeNumber {
     private final BigInteger bigInteger;
 
+    /**
+     * @param input number as text
+     * @throws ConstraintException if a constraint fails
+     * @throws NumberFormatException if the number format is invalid
+     * @throws ArithmeticException if the rounding of numbers in '1.23e123' format fails (if this format is enabled)
+     */
     public SafeBigInteger(final String input) throws ConstraintException {
         if (input.length() > SafeNumberParserConfig.getBigIntegerMaxLength()) {
             throw new ConstraintException(
@@ -30,6 +36,9 @@ public class SafeBigInteger extends SafeNumber {
         }
     }
 
+    /**
+     * @param bigInteger number to wrap, no validations are done
+     */
     public SafeBigInteger(final BigInteger bigInteger) {
         this.bigInteger = bigInteger;
     }

@@ -38,4 +38,10 @@ class TestSafeBigDecimal {
         String num = "0.123";
         assertEquals(new BigDecimal(num), new SafeBigDecimal(num).toBigDecimal());
     }
+
+    @Test
+    void testMultiCharInteger() {
+        String num = TestUtils.genLargeNumber();
+        assertThrows(ConstraintException.class, () -> new SafeBigDecimal(num));
+    }
 }

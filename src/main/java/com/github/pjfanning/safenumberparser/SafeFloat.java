@@ -8,6 +8,11 @@ import java.util.Objects;
 public class SafeFloat extends SafeNumber {
     private final Float f;
 
+    /**
+     * @param input number as text
+     * @throws ConstraintException if a constraint fails
+     * @throws NumberFormatException if the number format is invalid
+     */
     public SafeFloat(final String input) throws ConstraintException {
         if (input.length() > SafeNumberParserConfig.getFloatMaxLength()) {
             throw new ConstraintException(
@@ -17,6 +22,9 @@ public class SafeFloat extends SafeNumber {
         f = new Float(input);
     }
 
+    /**
+     * @param f number to wrap, no validations are done
+     */
     public SafeFloat(final Float f) {
         this.f = f;
     }

@@ -74,4 +74,9 @@ class TestSafeBigInteger {
         }
     }
 
+    @Test
+    void testMultiCharInteger() {
+        String num = TestUtils.genLargeNumber();
+        assertThrows(ConstraintException.class, () -> new SafeBigInteger(num));
+    }
 }

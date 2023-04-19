@@ -8,6 +8,11 @@ import java.util.Objects;
 public class SafeDouble extends SafeNumber {
     private final Double d;
 
+    /**
+     * @param input number as text
+     * @throws ConstraintException if a constraint fails
+     * @throws NumberFormatException if the number format is invalid
+     */
     public SafeDouble(final String input) throws ConstraintException {
         if (input.length() > SafeNumberParserConfig.getDoubleMaxLength()) {
             throw new ConstraintException(
@@ -17,6 +22,9 @@ public class SafeDouble extends SafeNumber {
         d = new Double(input);
     }
 
+    /**
+     * @param d number to wrap, no validations are done
+     */
     public SafeDouble(final Double d) {
         this.d = d;
     }
