@@ -79,4 +79,16 @@ class TestSafeBigInteger {
         String num = TestUtils.genLargeNumber();
         assertThrows(ConstraintException.class, () -> new SafeBigInteger(num));
     }
+
+    @Test
+    void testConfigWithSmallLengthLimit() {
+        Config config = ConfigFactory.load("application-bigint-low-size-limit.conf");
+        try {
+            SafeNumberParserConfig.setConfig(config);
+            final String num = "1234567890123456789";
+            assertThrows(ConstraintException.class, () -> new SafeBigInteger(num));
+        } finally {
+            SafeNumberParserConfig.setConfig(null);
+        }
+    }
 }

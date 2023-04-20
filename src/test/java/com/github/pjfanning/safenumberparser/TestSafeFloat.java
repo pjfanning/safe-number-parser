@@ -11,7 +11,7 @@ class TestSafeFloat {
 
     @Test
     void testNonInteger() throws ConstraintException {
-        String num = "1234567890.123456789";
+        final String num = "1234567890.123456789";
         assertEquals(new Float(num), new SafeFloat(num).toFloat());
     }
 
@@ -26,7 +26,7 @@ class TestSafeFloat {
         Config config = ConfigFactory.load("application-float-low-size-limit.conf");
         try {
             SafeNumberParserConfig.setConfig(config);
-            String num = TestUtils.genLargeNumber();
+            final String num = "1234567890.123456789";
             assertThrows(ConstraintException.class, () -> new SafeFloat(num));
         } finally {
             SafeNumberParserConfig.setConfig(null);
