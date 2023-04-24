@@ -50,7 +50,7 @@ because newer versions of Jackson have some of their own support for validating 
 
 Here is an [example](https://github.com/pjfanning/jackson-datatype-safe-number/blob/main/src/test/java/com/github/pjfanning/jackson/safenumber/TestPlainMapper.java) of using SafeBigDecimal with jackson-databind.
 
-I may continue work on [jackson-datatype-safe-number](https://github.com/pjfanning/jackson-datatype-safe-number).
+I have released [jackson-datatype-safe-number](https://github.com/pjfanning/jackson-datatype-safe-number).
 This provides custom serialization/deserialization for the types in this lib, that also takes advantage on jackson-core's
 fast number parser support.
 
